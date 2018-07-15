@@ -29,19 +29,26 @@ namespace Intermediate
             };
 
             CustomerNameComparer comparer = new CustomerNameComparer();
+
             List<Customer> list = new List<Customer>();
-            foreach (Customer cust in customers)
+            //foreach (Customer cust in customers)
                 
+            foreach (Customer cust in customers)
             {
+                listView1.Items.Add(cust.Name);
                 if (!list.Contains(cust, comparer))
                     list.Add(cust);
             }
-            Dictionary<Customer, Customer> dict = new Dictionary<Customer, Customer>();
+            
+            
+            Dictionary<Customer, Customer> dict = new Dictionary<Customer, Customer>(comparer);
             foreach (Customer cust in customers)
             {
                 if (!dict.ContainsKey(cust))
                     dict.Add(cust,cust);
             }
         }
+
+        
     }
 }

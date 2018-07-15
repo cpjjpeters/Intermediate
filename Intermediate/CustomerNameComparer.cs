@@ -10,9 +10,11 @@ namespace Intermediate
     {
         public bool Equals(Customer x, Customer y)
         {
-            if(x == null)return (y==null);
+            //Form1.textBox1.Text = x.Name;
+            if (x == null)return (y==null);
             if (y == null) return false;
-            return (x.Name == y.Name);
+            //return (x.Name == y.Name);
+            return (x.Address == y.Address);
         }
 
         public int GetHashCode(Customer obj)
